@@ -1,0 +1,49 @@
+{
+    "id":"{{service.name}}",
+    "instances": 1,
+    "cpus": 0.5,
+    "mem": 512,
+    "uris": [
+        "{{resource.assets.uris.scheduler-zip}}", 
+        "{{resource.assets.uris.executor-zip}}", 
+        "{{resource.assets.uris.bootstrap-zip}}"
+    ],
+    "cmd":"npm run {something}",
+    {{#pulse.constraints}}"constraints": {{{pulse.constraints}}},{{/pulse.constraints}}
+    "env": {
+        "PULSE_VERSION": "0.1.0",
+        "EXECUTOR_URI": "{{resource.assets.uris.executor-zip}}",
+        "SCHEDULER_URI": "{{resource.assets.uris.scheduler-zip}}",
+        "BOOTSTRAP_URI": "{{resource.assets.uris.bootstrap-zip}}",
+        "FRAMEWORK_NAME": "{{service.name}}",
+        "FRAMEWORK_USER": "{{service.user}}",
+        "FRAMEWORK_PRINCIPAL": "{{service.principal}}",
+
+        {{#service.secret_name}}
+        "DCOS_SERVICE_ACCOUNT_CREDENTIAL": { "secret": "serviceCredential" },
+        "MESOS_MODULES": "{\"libraries\": [{\"file\": \"libdcos_security.so\", \"modules\": [{\"name\": \"com_mesosphere_dcos_ClassicRPCAuthenticatee\"}]}]}",
+        "MESOS_AUTHENTICATEE": "com_mesosphere_dcos_ClassicRPCAuthenticatee",
+        {{/service.secret_name}}
+
+        "DEPLOY_STRATEGY": "{{service.deploy_strategy}}",
+
+        "DOMAIN_COUNT": "{{ domain.count }}",
+        "DOMAIN_CPUS": "{{ domain.cpus }}",
+        "DOMAIN_MEM": "{{ domain.mem }}",
+        "RIAK_COUNT": "{{ riak.count }}",
+        "RIAK_CPUS": "{{ riak.cpus }}",
+        "RIAK_MEM": "{{ riak.mem }}",
+        "RIAKTS_COUNT": "{{ riakts.count }}",
+        "RIAKTS_CPUS": "{{ riakts.cpus }}",
+        "RIAKTS_MEM": "{{ riakts.mem }}",
+        "ELASTIC_COUNT": "{{ elastic.count }}",
+        "ELASTIC_CPUS": "{{ elastic.cpus }}",
+        "ELASTIC_MEM": "{{ elastic.mem }}",
+        "SERVICESTACK_COUNT": "{{ servicestack.count }}",
+        "SERVICESTACK_CPUS": "{{ servicestack.cpus }}",
+        "SERVICESTACK_MEM": "{{ servicestack.mem }}"
+    },
+    "labels": {
+        "DCOS_PACKAGE_FRAMEWORK_NAME": "{{service.name}}"
+    }
+}

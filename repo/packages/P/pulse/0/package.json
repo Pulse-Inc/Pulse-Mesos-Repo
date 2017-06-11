@@ -1,0 +1,15 @@
+{
+  "packagingVersion": "3.0",
+  "name": "pulse",
+  "minDcosReleaseVersion": "1.9",
+  "version": "0.1.0",
+  "framework": true,
+  "tags": ["mesosphere", "framework", "database", "bi", "pulse", "alerts", "metrics"],
+  "maintainer": "csolar@syndeonetwork.com",
+  "description": "Pulse BI mesos framework",
+  "scm": "",
+  "website": "https://github.com/Pulse-Inc/Pulse-Mesos",
+  "postInstallNotes": "",
+  "preInstallNotes": "",
+  "postUninstallNotes": ""
+}

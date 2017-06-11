@@ -1,0 +1,36 @@
+{
+  "assets": {
+    "uris": {
+      "executor-zip": "https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/pulse_executor.zip",
+      "bootstrap-zip": "https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/pulse_bootstrap.zip",
+      "scheduler-zip": "https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/pulse-scheduler.zip"
+    }
+  },
+  "images": {
+  },
+  "cli":{
+    "binaries":{
+      "darwin":{
+        "x86-64":{
+          "contentHash":[ { "algo":"sha256", "value":"" } ],
+          "kind":"executable",
+          "url":"https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/dcos-elastic-darwin"
+        }
+      },
+      "linux":{
+        "x86-64":{
+          "contentHash":[ { "algo":"sha256", "value":"" } ],
+          "kind":"executable",
+          "url":"https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/dcos-elastic-linux"
+        }
+      },
+      "windows":{
+        "x86-64":{
+          "contentHash":[ { "algo":"sha256", "value":"" } ],
+          "kind":"executable",
+          "url":"https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/dcos-elastic.exe"
+        }
+      }
+    }
+  }
+}

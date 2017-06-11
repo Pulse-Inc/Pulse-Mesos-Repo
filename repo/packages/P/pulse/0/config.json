@@ -1,0 +1,185 @@
+{
+    "type": "object",
+    "properties": {
+        "service": {
+          "type": "object",
+          "description": "DC/OS service configuration properties",
+          "properties": {
+            "name": {
+              "description": "The name of the pulse service instance",
+              "type": "string",
+              "default": "elastic"
+            },
+            "secret_name": {
+              "description":"Name of the Secret Store credentials to use for DC/OS service authentication. This should be left empty unless service authentication is needed.",
+              "type":"string",
+              "default":""
+            },
+            "user": {
+              "description": "The user that runs the pulse services and owns the Mesos sandbox.",
+              "type": "string",
+              "default": "core"
+            },
+            "principal": {
+              "description": "The principal for the pulse service instance.",
+              "type": "string",
+              "default": ""
+            },
+            "deploy_strategy": {
+              "description": "pulse and rollout strategy. [parallel, serial]",
+              "type": "string",
+              "default": "parallel"
+            }
+          },
+          "required": [
+            "name",
+            "user",
+            "deploy_strategy"
+          ]
+        },
+          "domain": {
+            "description": "domain configuration properties",
+            "type": "object",
+            "properties": {
+              "count": {
+                "description": "Number of domain nodes to run",
+                "type": "integer",
+                "default": 4,
+                "minimum": 1
+              },
+              "cpus": {
+                "description": "domain cpu requirements",
+                "type": "number",
+                "default": 1
+              },
+              "mem": {
+                "description": "domain mem requirements",
+                "type": "integer",
+                "default": 2048
+              }
+            },
+            "required": [
+              "cpus",
+              "mem",
+              "count"
+            ]
+          },
+          "riak": {
+            "description": "riak configuration properties",
+            "type": "object",
+            "properties": {
+              "count": {
+                "description": "Number of riak nodes to run",
+                "type": "integer",
+                "default": 2,
+                "minimum": 1
+              },
+              "cpus": {
+                "description": "riak cpu requirements",
+                "type": "number",
+                "default": 1
+              },
+              "mem": {
+                "description": "riak mem requirements",
+                "type": "integer",
+                "default": 2048
+              }
+            },
+            "required": [
+              "cpus",
+              "mem",
+              "count"
+            ]
+          },
+          "riakts": {
+            "description": "riakts configuration properties",
+            "type": "object",
+            "properties": {
+              "count": {
+                "description": "Number of riakts nodes to run",
+                "type": "integer",
+                "default": 2,
+                "minimum": 1
+              },
+              "cpus": {
+                "description": "riakts cpu requirements",
+                "type": "number",
+                "default": 1
+              },
+              "mem": {
+                "description": "riakts mem requirements",
+                "type": "integer",
+                "default": 2048
+              }
+            },
+            "required": [
+              "cpus",
+              "mem",
+              "count"
+            ]
+          },
+          "elastic": {
+            "description": "elastic configuration properties",
+            "type": "object",
+            "properties": {
+              "count": {
+                "description": "Number of elastic nodes to run",
+                "type": "integer",
+                "default": 2,
+                "minimum": 1
+              },
+              "cpus": {
+                "description": "elastic cpu requirements",
+                "type": "number",
+                "default": 1
+              },
+              "mem": {
+                "description": "elastic mem requirements",
+                "type": "integer",
+                "default": 2048
+              }
+            },
+            "required": [
+              "cpus",
+              "mem",
+              "count"
+            ]
+          },
+          "servicestack": {
+            "description": "servicestack configuration properties",
+            "type": "object",
+            "properties": {
+              "count": {
+                "description": "Number of servicestack nodes to run",
+                "type": "integer",
+                "default": 2,
+                "minimum": 1
+              },
+              "cpus": {
+                "description": "servicestack cpu requirements",
+                "type": "number",
+                "default": 0.5
+              },
+              "mem": {
+                "description": "servicestack mem requirements",
+                "type": "integer",
+                "default": 2048
+              }
+            },
+            "required": [
+              "cpus",
+              "mem",
+              "count"
+            ]
+          }
+        },
+          "required": [
+              "service",
+              "domain",
+              "riak",
+              "riakts",
+              "elastic",
+              "servicestack"
+          ]
+      
+  }
