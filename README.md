@@ -4,7 +4,7 @@
 
 - Add the DCOS Pulse package to your DCOS repository sources:
 
-		dcos package repo add --index=0 Pulse https://github.com/Pulse-Inc/Pulse-Mesos/archive/1.0.0.zip
+		dcos package repo add --index=0 Pulse https://github.com/Pulse-Inc/Pulse-Mesos-Repo/archive/1.0.0.zip
 
 - Install the `dcos pulse` subcommand:
 
