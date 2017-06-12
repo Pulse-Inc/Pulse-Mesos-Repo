@@ -25,6 +25,11 @@
             "description": "domain configuration properties",
             "type": "object",
             "properties": {
+              "env": {
+                "description": "container environment",
+                "type": "string",
+                "default": "{}"
+              },
               "version": {
                 "description": "Version of domain image",
                 "type": "string",
@@ -48,6 +53,7 @@
               }
             },
             "required": [
+              "env",
               "version",
               "cpus",
               "mem",
@@ -58,6 +64,11 @@
             "description": "riak configuration properties",
             "type": "object",
             "properties": {
+              "env": {
+                "description": "container environment",
+                "type": "string",
+                "default": "{}"
+              },
               "version": {
                 "description": "Version of riak image",
                 "type": "string",
@@ -81,6 +92,7 @@
               }
             },
             "required": [
+              "env",
               "version",
               "cpus",
               "mem",
@@ -91,6 +103,11 @@
             "description": "riakts configuration properties",
             "type": "object",
             "properties": {
+              "env": {
+                "description": "container environment",
+                "type": "string",
+                "default": "{}"
+              },
               "version": {
                 "description": "Version of riakts image",
                 "type": "string",
@@ -114,6 +131,7 @@
               }
             },
             "required": [
+              "env",
               "version",
               "cpus",
               "mem",
@@ -124,6 +142,11 @@
             "description": "elastic configuration properties",
             "type": "object",
             "properties": {
+              "env": {
+                "description": "container environment",
+                "type": "string",
+                "default": "{}"
+              },
               "version": {
                 "description": "Version of elastic image",
                 "type": "string",
@@ -147,6 +170,7 @@
               }
             },
             "required": [
+              "env",
               "version",
               "cpus",
               "mem",
@@ -157,6 +181,11 @@
             "description": "servicestack configuration properties",
             "type": "object",
             "properties": {
+              "env": {
+                "description": "container environment",
+                "type": "string",
+                "default": "{}"
+              },
               "version": {
                 "description": "Version of servicestack image",
                 "type": "string",
@@ -180,6 +209,7 @@
               }
             },
             "required": [
+              "env",
               "version",
               "cpus",
               "mem",
