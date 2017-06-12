@@ -28,8 +28,7 @@
           },
           "required": [
             "name",
-            "user",
-            "deploy_strategy"
+            "docker_repo"
           ]
         },
           "domain": {
