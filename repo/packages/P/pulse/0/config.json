@@ -29,6 +29,11 @@
               "description": "pulse rollout strategy. [parallel, serial]",
               "type": "string",
               "default": "parallel"
+            },
+            "docker_repo": {
+              "description": "the base docker repo for framework images",
+              "type": "string",
+              "default": "pulseinc-docker.jfrog.io"
             }
           },
           "required": [

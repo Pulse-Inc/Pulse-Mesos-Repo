@@ -1,11 +1,11 @@
 {
   "assets": {
-    "uris": {
-      "bootstrap-zip": "https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/pulse_bootstrap.zip",
-      "scheduler-zip": "https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/pulse_scheduler.zip"
+    "container":{
+      "docker": {
+        "pulse": "pulseinc/pulse:latest",
+        "bootstrap": "pulseinc/bootstrap:latest"
+      }
     }
-  },
-  "images": {
   },
   "cli":{
     "binaries":{

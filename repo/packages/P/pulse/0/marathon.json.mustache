@@ -3,16 +3,21 @@
     "instances": 1,
     "cpus": 0.5,
     "mem": 512,
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "{{resource.assets.container.docker.pulse}}",
+          "network": "HOST",
+          "forcePullImage": true
+          ]
+        }
+    },
     "uris": [
-        "{{resource.assets.uris.scheduler-zip}}", 
-        "{{resource.assets.uris.bootstrap-zip}}"
+        "file:///etc/docker.tgz"
     ],
-    "cmd":"npm install --silent && npm start",
     {{#pulse.constraints}}"constraints": {{{pulse.constraints}}},{{/pulse.constraints}}
     "env": {
         "PULSE_VERSION": "0.1.0",
-        "SCHEDULER_URI": "{{resource.assets.uris.scheduler-zip}}",
-        "BOOTSTRAP_URI": "{{resource.assets.uris.bootstrap-zip}}",
         "FRAMEWORK_NAME": "{{service.name}}",
         "FRAMEWORK_USER": "{{service.user}}",
         "FRAMEWORK_PRINCIPAL": "{{service.principal}}",
@@ -23,30 +28,64 @@
         "MESOS_AUTHENTICATEE": "com_mesosphere_dcos_ClassicRPCAuthenticatee",
         {{/service.secret_name}}
 
-        "DEPLOY_STRATEGY": "{{service.deploy_strategy}}",
+        "TASK_DEF_NUM": 5,
 
-        "DOMAIN_VERSION": "{{ domain.version }}",
-        "DOMAIN_COUNT": "{{ domain.count }}",
-        "DOMAIN_CPUS": "{{ domain.cpus }}",
-        "DOMAIN_MEM": "{{ domain.mem }}",
-        "RIAK_VERSION": "{{ riak.version }}",
-        "RIAK_COUNT": "{{ riak.count }}",
-        "RIAK_CPUS": "{{ riak.cpus }}",
-        "RIAK_MEM": "{{ riak.mem }}",
-        "RIAKTS_VERSION": "{{ riakts.version }}",
-        "RIAKTS_COUNT": "{{ riakts.count }}",
-        "RIAKTS_CPUS": "{{ riakts.cpus }}",
-        "RIAKTS_MEM": "{{ riakts.mem }}",
-        "ELASTIC_VERSION": "{{ elastic.version }}",
-        "ELASTIC_COUNT": "{{ elastic.count }}",
-        "ELASTIC_CPUS": "{{ elastic.cpus }}",
-        "ELASTIC_MEM": "{{ elastic.mem }}",
-        "SERVICESTACK_VERSION": "{{ servicestack.version }}",
-        "SERVICESTACK_COUNT": "{{ servicestack.count }}",
-        "SERVICESTACK_CPUS": "{{ servicestack.cpus }}",
-        "SERVICESTACK_MEM": "{{ servicestack.mem }}"
+        "TASK0_NAME": "domain",
+        "TASK0_ENV": "{}",
+        "TASK0_IMAGE": "{{ service.docker_repo }}/pulseinc.pulse.endpoints.domain:{{ domain.version }}",
+        "TASK0_NUM_INSTANCES": "{{ domain.count }}",
+        "TASK0_CPUS": "{{ domain.cpus }}",
+        "TASK0_MEM": "{{ domain.mem }}",
+
+        "TASK1_NAME": "riak",
+        "TASK1_ENV": "{}",
+        "TASK1_IMAGE": "{{ service.docker_repo }}/pulseinc.pulse.endpoints.riak:{{ riak.version }}",
+        "TASK1_NUM_INSTANCES": "{{ riak.count }}",
+        "TASK1_CPUS": "{{ riak.cpus }}",
+        "TASK1_MEM": "{{ riak.mem }}",
+
+        "TASK2_NAME": "riakts",
+        "TASK2_ENV": "{}",
+        "TASK2_IMAGE": "{{ service.docker_repo }}/pulseinc.pulse.endpoints.riakts:{{ riakts.version }}",
+        "TASK2_NUM_INSTANCES": "{{ riakts.count }}",
+        "TASK2_CPUS": "{{ riakts.cpus }}",
+        "TASK2_MEM": "{{ riakts.mem }}",
+
+        "TASK3_NAME": "elastic",
+        "TASK3_ENV": "{}",
+        "TASK3_IMAGE": "{{ service.docker_repo }}/pulseinc.pulse.endpoints.elastic:{{ elastic.version }}",
+        "TASK3_NUM_INSTANCES": "{{ elastic.count }}",
+        "TASK3_CPUS": "{{ elastic.cpus }}",
+        "TASK3_MEM": "{{ elastic.mem }}",
+
+        "TASK4_NAME": "servicestack",
+        "TASK4_ENV": "{}",
+        "TASK4_IMAGE": "{{ service.docker_repo }}/pulseinc.pulse.endpoints.servicestack:{{ servicestack.version }}",
+        "TASK4_NUM_INSTANCES": "{{ servicestack.count }}",
+        "TASK4_CPUS": "{{ servicestack.cpus }}",
+        "TASK4_MEM": "{{ servicestack.mem }}"
+
     },
+  "healthChecks": [
+    {
+      "path": "/health",
+      "protocol": "HTTP",
+      "gracePeriodSeconds": 30,
+      "intervalSeconds": 10,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3,
+      "ignoreHttp1xx": false,
+      "portIndex": 0
+    }
+  ],
     "labels": {
-        "DCOS_PACKAGE_FRAMEWORK_NAME": "{{service.name}}"
+        "DCOS_SERVICE_NAME": "{{service.name}}",
+        "DCOS_SERVICE_SCHEME": "http",
+        "DCOS_SERVICE_PORT_INDEX": "0",
+        "MARATHON_SINGLE_INSTANCE_APP":"true"
+    },
+    "upgradeStrategy":{
+        "minimumHealthCapacity": 0,
+        "maximumOverCapacity": 0
     }
 }
