@@ -26,7 +26,7 @@
               "default": ""
             },
             "deploy_strategy": {
-              "description": "pulse and rollout strategy. [parallel, serial]",
+              "description": "pulse rollout strategy. [parallel, serial]",
               "type": "string",
               "default": "parallel"
             }
@@ -41,6 +41,11 @@
             "description": "domain configuration properties",
             "type": "object",
             "properties": {
+              "version": {
+                "description": "Version of domain image",
+                "type": "number",
+                "default": "0.1.0"
+              },
               "count": {
                 "description": "Number of domain nodes to run",
                 "type": "integer",
@@ -59,6 +64,7 @@
               }
             },
             "required": [
+              "version",
               "cpus",
               "mem",
               "count"
@@ -68,6 +74,11 @@
             "description": "riak configuration properties",
             "type": "object",
             "properties": {
+              "version": {
+                "description": "Version of riak image",
+                "type": "number",
+                "default": "0.1.0"
+              },
               "count": {
                 "description": "Number of riak nodes to run",
                 "type": "integer",
@@ -86,6 +97,7 @@
               }
             },
             "required": [
+              "version",
               "cpus",
               "mem",
               "count"
@@ -95,6 +107,11 @@
             "description": "riakts configuration properties",
             "type": "object",
             "properties": {
+              "version": {
+                "description": "Version of riakts image",
+                "type": "number",
+                "default": "0.1.0"
+              },
               "count": {
                 "description": "Number of riakts nodes to run",
                 "type": "integer",
@@ -113,6 +130,7 @@
               }
             },
             "required": [
+              "version",
               "cpus",
               "mem",
               "count"
@@ -122,6 +140,11 @@
             "description": "elastic configuration properties",
             "type": "object",
             "properties": {
+              "version": {
+                "description": "Version of elastic image",
+                "type": "number",
+                "default": "0.1.0"
+              },
               "count": {
                 "description": "Number of elastic nodes to run",
                 "type": "integer",
@@ -140,6 +163,7 @@
               }
             },
             "required": [
+              "version",
               "cpus",
               "mem",
               "count"
@@ -149,6 +173,11 @@
             "description": "servicestack configuration properties",
             "type": "object",
             "properties": {
+              "version": {
+                "description": "Version of servicestack image",
+                "type": "number",
+                "default": "0.1.0"
+              },
               "count": {
                 "description": "Number of servicestack nodes to run",
                 "type": "integer",
@@ -167,6 +196,7 @@
               }
             },
             "required": [
+              "version",
               "cpus",
               "mem",
               "count"
