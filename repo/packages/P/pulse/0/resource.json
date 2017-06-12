@@ -1,9 +1,8 @@
 {
   "assets": {
     "uris": {
-      "executor-zip": "https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/pulse_executor.zip",
       "bootstrap-zip": "https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/pulse_bootstrap.zip",
-      "scheduler-zip": "https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/pulse-scheduler.zip"
+      "scheduler-zip": "https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/pulse_scheduler.zip"
     }
   },
   "images": {

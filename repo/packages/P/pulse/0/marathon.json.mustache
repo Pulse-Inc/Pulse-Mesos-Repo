@@ -5,14 +5,12 @@
     "mem": 512,
     "uris": [
         "{{resource.assets.uris.scheduler-zip}}", 
-        "{{resource.assets.uris.executor-zip}}", 
         "{{resource.assets.uris.bootstrap-zip}}"
     ],
-    "cmd":"npm run {something}",
+    "cmd":"npm install --silent && npm start",
     {{#pulse.constraints}}"constraints": {{{pulse.constraints}}},{{/pulse.constraints}}
     "env": {
         "PULSE_VERSION": "0.1.0",
-        "EXECUTOR_URI": "{{resource.assets.uris.executor-zip}}",
         "SCHEDULER_URI": "{{resource.assets.uris.scheduler-zip}}",
         "BOOTSTRAP_URI": "{{resource.assets.uris.bootstrap-zip}}",
         "FRAMEWORK_NAME": "{{service.name}}",
