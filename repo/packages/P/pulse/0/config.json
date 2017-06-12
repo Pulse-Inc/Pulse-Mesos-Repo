@@ -8,27 +8,17 @@
             "name": {
               "description": "The name of the pulse service instance",
               "type": "string",
-              "default": "elastic"
+              "default": "pulse"
             },
             "secret_name": {
               "description":"Name of the Secret Store credentials to use for DC/OS service authentication. This should be left empty unless service authentication is needed.",
               "type":"string",
               "default":""
             },
-            "user": {
-              "description": "The user that runs the pulse services and owns the Mesos sandbox.",
-              "type": "string",
-              "default": "core"
-            },
             "principal": {
               "description": "The principal for the pulse service instance.",
               "type": "string",
               "default": ""
-            },
-            "deploy_strategy": {
-              "description": "pulse rollout strategy. [parallel, serial]",
-              "type": "string",
-              "default": "parallel"
             },
             "docker_repo": {
               "description": "the base docker repo for framework images",
@@ -48,7 +38,7 @@
             "properties": {
               "version": {
                 "description": "Version of domain image",
-                "type": "number",
+                "type": "string",
                 "default": "0.1.0"
               },
               "count": {
@@ -81,7 +71,7 @@
             "properties": {
               "version": {
                 "description": "Version of riak image",
-                "type": "number",
+                "type": "string",
                 "default": "0.1.0"
               },
               "count": {
@@ -114,7 +104,7 @@
             "properties": {
               "version": {
                 "description": "Version of riakts image",
-                "type": "number",
+                "type": "string",
                 "default": "0.1.0"
               },
               "count": {
@@ -147,7 +137,7 @@
             "properties": {
               "version": {
                 "description": "Version of elastic image",
-                "type": "number",
+                "type": "string",
                 "default": "0.1.0"
               },
               "count": {
@@ -180,7 +170,7 @@
             "properties": {
               "version": {
                 "description": "Version of servicestack image",
-                "type": "number",
+                "type": "string",
                 "default": "0.1.0"
               },
               "count": {
