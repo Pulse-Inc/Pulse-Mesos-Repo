@@ -10,16 +10,6 @@
               "type": "string",
               "default": "pulse"
             },
-            "secret_name": {
-              "description":"Name of the Secret Store credentials to use for DC/OS service authentication. This should be left empty unless service authentication is needed.",
-              "type":"string",
-              "default":""
-            },
-            "principal": {
-              "description": "The principal for the pulse service instance.",
-              "type": "string",
-              "default": ""
-            },
             "docker_repo": {
               "description": "the base docker repo for framework images",
               "type": "string",
