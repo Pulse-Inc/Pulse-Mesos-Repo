@@ -2,33 +2,7 @@
   "assets": {
     "container":{
       "docker": {
-        "pulse": "pulseinc/pulse:latest",
-        "bootstrap": "pulseinc/bootstrap:latest"
-      }
-    }
-  },
-  "cli":{
-    "binaries":{
-      "darwin":{
-        "x86-64":{
-          "contentHash":[ { "algo":"sha256", "value":"" } ],
-          "kind":"executable",
-          "url":"https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/dcos-elastic-darwin"
-        }
-      },
-      "linux":{
-        "x86-64":{
-          "contentHash":[ { "algo":"sha256", "value":"" } ],
-          "kind":"executable",
-          "url":"https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/dcos-elastic-linux"
-        }
-      },
-      "windows":{
-        "x86-64":{
-          "contentHash":[ { "algo":"sha256", "value":"" } ],
-          "kind":"executable",
-          "url":"https://github.com/Pulse-Inc/Pulse-Mesos/releases/download/0.1.0/dcos-elastic.exe"
-        }
+        "pulse": "pulseinc/pulse:latest"
       }
     }
   }
