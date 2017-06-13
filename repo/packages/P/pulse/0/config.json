@@ -25,10 +25,15 @@
             "description": "domain configuration properties",
             "type": "object",
             "properties": {
-              "env": {
-                "description": "container environment",
+              "license": {
+                "description": "container nsb license",
                 "type": "string",
-                "default": "{}"
+                "default": ""
+              },
+              "config": {
+                "description": "container configuration",
+                "type": "string",
+                "default": ""
               },
               "version": {
                 "description": "Version of domain image",
@@ -53,7 +58,8 @@
               }
             },
             "required": [
-              "env",
+              "license",
+              "config",
               "version",
               "cpus",
               "mem",
@@ -64,10 +70,15 @@
             "description": "riak configuration properties",
             "type": "object",
             "properties": {
-              "env": {
-                "description": "container environment",
+              "license": {
+                "description": "container nsb license",
                 "type": "string",
-                "default": "{}"
+                "default": ""
+              },
+              "config": {
+                "description": "container configuration",
+                "type": "string",
+                "default": ""
               },
               "version": {
                 "description": "Version of riak image",
@@ -92,7 +103,8 @@
               }
             },
             "required": [
-              "env",
+              "license",
+              "config",
               "version",
               "cpus",
               "mem",
@@ -103,10 +115,15 @@
             "description": "riakts configuration properties",
             "type": "object",
             "properties": {
-              "env": {
-                "description": "container environment",
+              "license": {
+                "description": "container nsb license",
                 "type": "string",
-                "default": "{}"
+                "default": ""
+              },
+              "config": {
+                "description": "container configuration",
+                "type": "string",
+                "default": ""
               },
               "version": {
                 "description": "Version of riakts image",
@@ -131,7 +148,8 @@
               }
             },
             "required": [
-              "env",
+              "license",
+              "config",
               "version",
               "cpus",
               "mem",
@@ -142,10 +160,15 @@
             "description": "elastic configuration properties",
             "type": "object",
             "properties": {
-              "env": {
-                "description": "container environment",
+              "license": {
+                "description": "container nsb license",
                 "type": "string",
-                "default": "{}"
+                "default": ""
+              },
+              "config": {
+                "description": "container configuration",
+                "type": "string",
+                "default": ""
               },
               "version": {
                 "description": "Version of elastic image",
@@ -170,7 +193,8 @@
               }
             },
             "required": [
-              "env",
+              "license",
+              "config",
               "version",
               "cpus",
               "mem",
@@ -181,10 +205,15 @@
             "description": "servicestack configuration properties",
             "type": "object",
             "properties": {
-              "env": {
-                "description": "container environment",
+              "license": {
+                "description": "container nsb license",
                 "type": "string",
-                "default": "{}"
+                "default": ""
+              },
+              "config": {
+                "description": "container configuration",
+                "type": "string",
+                "default": ""
               },
               "version": {
                 "description": "Version of servicestack image",
@@ -209,7 +238,8 @@
               }
             },
             "required": [
-              "env",
+              "license",
+              "config",
               "version",
               "cpus",
               "mem",
