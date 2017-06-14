@@ -27,7 +27,7 @@
         "TASK0_NUM_INSTANCES": "{{ domain.count }}",
         "TASK0_CPUS": "{{ domain.cpus }}",
         "TASK0_MEM": "{{ domain.mem }}",
-        "TASK0_URI": "file://$MESOS_SANDBOX/docker.tar.gz",
+        "TASK0_URI": "file:///etc/docker.tar.gz",
 
         "TASK1_NAME": "riak",
         "TASK1_LICENSE": "{{ riak.license }}",
@@ -36,7 +36,7 @@
         "TASK1_NUM_INSTANCES": "{{ riak.count }}",
         "TASK1_CPUS": "{{ riak.cpus }}",
         "TASK1_MEM": "{{ riak.mem }}",
-        "TASK1_URI": "file://$MESOS_SANDBOX/docker.tar.gz",
+        "TASK1_URI": "file:///etc/docker.tar.gz",
 
         "TASK2_NAME": "riakts",
         "TASK2_LICENSE": "{{ riakts.license }}",
@@ -45,7 +45,7 @@
         "TASK2_NUM_INSTANCES": "{{ riakts.count }}",
         "TASK2_CPUS": "{{ riakts.cpus }}",
         "TASK2_MEM": "{{ riakts.mem }}",
-        "TASK2_URI": "file://$MESOS_SANDBOX/docker.tar.gz",
+        "TASK2_URI": "file://etc/docker.tar.gz",
 
         "TASK3_NAME": "elastic",
         "TASK3_LICENSE": "{{ elastic.license }}",
@@ -54,7 +54,7 @@
         "TASK3_NUM_INSTANCES": "{{ elastic.count }}",
         "TASK3_CPUS": "{{ elastic.cpus }}",
         "TASK3_MEM": "{{ elastic.mem }}",
-        "TASK3_URI": "file://$MESOS_SANDBOX/docker.tar.gz",
+        "TASK3_URI": "file:///etc/docker.tar.gz",
 
         "TASK4_NAME": "servicestack",
         "TASK4_LICENSE": "{{ servicestack.license }}",
@@ -63,7 +63,7 @@
         "TASK4_NUM_INSTANCES": "{{ servicestack.count }}",
         "TASK4_CPUS": "{{ servicestack.cpus }}",
         "TASK4_MEM": "{{ servicestack.mem }}",
-        "TASK4_URI": "file://$MESOS_SANDBOX/docker.tar.gz"
+        "TASK4_URI": "file:///etc/docker.tar.gz"
 
     },
   "healthChecks": [
