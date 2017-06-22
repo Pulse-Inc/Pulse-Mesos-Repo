@@ -30,6 +30,7 @@
         "TASK0_URI": "file:///etc/docker.tar.gz",
         "TASK0_PORT_NUM": "1",
         "TASK0_HEALTHCHECK": "/health",
+        "TASK0_HEALTHCHECK_PORT": "0",
 
         "TASK1_NAME": "riak",
         "TASK1_LICENSE": "{{ riak.license }}",
@@ -41,6 +42,7 @@
         "TASK1_URI": "file:///etc/docker.tar.gz",
         "TASK1_PORT_NUM": "1",
         "TASK1_HEALTHCHECK": "/health",
+        "TASK1_HEALTHCHECK_PORT": "0",
 
         "TASK2_NAME": "riakts",
         "TASK2_LICENSE": "{{ riakts.license }}",
@@ -52,6 +54,7 @@
         "TASK2_URI": "file:///etc/docker.tar.gz",
         "TASK2_PORT_NUM": "1",
         "TASK2_HEALTHCHECK": "/health",
+        "TASK2_HEALTHCHECK_PORT": "0",
 
         "TASK3_NAME": "elastic",
         "TASK3_LICENSE": "{{ elastic.license }}",
@@ -63,6 +66,7 @@
         "TASK3_URI": "file:///etc/docker.tar.gz",
         "TASK3_PORT_NUM": "1",
         "TASK3_HEALTHCHECK": "/health",
+        "TASK3_HEALTHCHECK_PORT": "0",
 
         "TASK4_NAME": "servicestack",
         "TASK4_LICENSE": "{{ servicestack.license }}",
@@ -73,7 +77,8 @@
         "TASK4_MEM": "{{ servicestack.mem }}",
         "TASK4_URI": "file:///etc/docker.tar.gz",
         "TASK4_PORT_NUM": "2",
-        "TASK4_HEALTHCHECK": "/health"
+        "TASK4_HEALTHCHECK": "/health",
+        "TASK4_HEALTHCHECK_PORT": "0"
 
     },
   "healthChecks": [
