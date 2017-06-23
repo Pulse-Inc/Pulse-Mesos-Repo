@@ -15,7 +15,6 @@
         "file:///etc/docker.tar.gz"
     ],
     "env": {
-        "LOG_LEVEL": "debug",
         "PULSE_VERSION": "0.1.0",
         "FRAMEWORK_NAME": "{{service.name}}",
 
@@ -77,9 +76,10 @@
         "TASK4_CPUS": "{{ servicestack.cpus }}",
         "TASK4_MEM": "{{ servicestack.mem }}",
         "TASK4_URI": "file:///etc/docker.tar.gz",
-        "TASK4_PORT_NUM": "2",
+        "TASK4_PORT_NUM": "1",
         "TASK4_HEALTHCHECK": "/health",
-        "TASK4_HEALTHCHECK_PORT": "0"
+        "TASK4_HEALTHCHECK_PORT": "0",
+        "TASK4_FIXED_PORTS": "80"
 
     },
   "healthChecks": [
