@@ -15,7 +15,6 @@
         "file:///etc/docker.tar.gz"
     ],
     "env": {
-    "LOG_LEVEL":"debug",
         "PULSE_VERSION": "0.1.0",
         "FRAMEWORK_NAME": "{{service.name}}",
 
@@ -80,7 +79,7 @@
         "TASK4_PORT_NUM": "2",
         "TASK4_HEALTHCHECK": "/health",
         "TASK4_HEALTHCHECK_PORT": "0",
-        "TASK4_LABELS": "{ \"HAPROXY_GROUP\": \"external\" }"
+        "TASK4_LABELS": "{ \"HAPROXY_GROUP\": \"external\", \"HAPROXY_1_PORT\": \"80\", \"HAPROXY_DEPLOYMENT_GROUP\": \"servicestack\" }"
 
     },
   "healthChecks": [
@@ -96,6 +95,7 @@
     }
   ],
     "labels": {
+        "DCOS_PACKAGE_FRAMEWORK_NAME": "{{service.name}}",
         "DCOS_SERVICE_NAME": "{{service.name}}",
         "DCOS_SERVICE_SCHEME": "http",
         "DCOS_SERVICE_PORT_INDEX": "0",
