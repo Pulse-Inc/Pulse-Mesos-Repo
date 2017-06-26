@@ -29,6 +29,7 @@
         "TASK0_MEM": "{{ domain.mem }}",
         "TASK0_URI": "file:///etc/docker.tar.gz",
         "TASK0_PORT_NUM": "1",
+        "TASK0_EXPOSE_PORT": "8080",
         "TASK0_HEALTHCHECK": "/health",
         "TASK0_HEALTHCHECK_PORT": "0",
 
@@ -41,6 +42,7 @@
         "TASK1_MEM": "{{ riak.mem }}",
         "TASK1_URI": "file:///etc/docker.tar.gz",
         "TASK1_PORT_NUM": "1",
+        "TASK1_EXPOSE_PORT": "8080",
         "TASK1_HEALTHCHECK": "/health",
         "TASK1_HEALTHCHECK_PORT": "0",
 
@@ -53,6 +55,7 @@
         "TASK2_MEM": "{{ riakts.mem }}",
         "TASK2_URI": "file:///etc/docker.tar.gz",
         "TASK2_PORT_NUM": "1",
+        "TASK2_EXPOSE_PORT": "8080",
         "TASK2_HEALTHCHECK": "/health",
         "TASK2_HEALTHCHECK_PORT": "0",
 
@@ -65,6 +68,7 @@
         "TASK3_MEM": "{{ elastic.mem }}",
         "TASK3_URI": "file:///etc/docker.tar.gz",
         "TASK3_PORT_NUM": "1",
+        "TASK3_EXPOSE_PORT": "8080",
         "TASK3_HEALTHCHECK": "/health",
         "TASK3_HEALTHCHECK_PORT": "0",
 
@@ -77,6 +81,8 @@
         "TASK4_MEM": "{{ servicestack.mem }}",
         "TASK4_URI": "file:///etc/docker.tar.gz",
         "TASK4_PORT_NUM": "1",
+        "TASK4_EXPOSE_PORT": "80",
+        "TASK4_SERVICE_PORT": "10000",
         "TASK4_HEALTHCHECK": "/health",
         "TASK4_HEALTHCHECK_PORT": "0",
         "TASK4_LABELS": "{ \"HAPROXY_GROUP\": \"external\", \"HAPROXY_DEPLOYMENT_GROUP\": \"servicestack\" }"
