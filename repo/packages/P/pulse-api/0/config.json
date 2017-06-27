@@ -1,0 +1,81 @@
+{
+    "type": "object",
+    "properties": {
+        "service": {
+          "type": "object",
+          "description": "DC/OS service configuration properties",
+          "properties": {
+            "name": {
+              "description": "The name of the pulse service instance",
+              "type": "string",
+              "default": "api"
+            },
+            "docker_repo": {
+              "description": "the base docker repo for framework images",
+              "type": "string",
+              "default": "pulseinc-docker.jfrog.io"
+            },
+            "vhost": {
+              "description": "the virtual host for marathon-lb",
+              "type": "string",
+              "default": ""
+            }
+          },
+          "required": [
+            "name",
+            "docker_repo",
+            "vhost"
+          ]
+        },
+          "servicestack": {
+            "description": "servicestack configuration properties",
+            "type": "object",
+            "properties": {
+              "license": {
+                "description": "container nsb license",
+                "type": "string",
+                "default": ""
+              },
+              "config": {
+                "description": "container configuration",
+                "type": "string",
+                "default": ""
+              },
+              "version": {
+                "description": "Version of servicestack image",
+                "type": "string",
+                "default": "0.1.0"
+              },
+              "count": {
+                "description": "Number of servicestack nodes to run",
+                "type": "integer",
+                "default": 2,
+                "minimum": 1
+              },
+              "cpus": {
+                "description": "servicestack cpu requirements",
+                "type": "number",
+                "default": 0.5
+              },
+              "mem": {
+                "description": "servicestack mem requirements",
+                "type": "integer",
+                "default": 2048
+              }
+            },
+            "required": [
+              "license",
+              "config",
+              "version",
+              "cpus",
+              "mem",
+              "count"
+            ]
+          }
+        },
+          "required": [
+              "service",
+              "servicestack"
+          ]
+      
+  }
