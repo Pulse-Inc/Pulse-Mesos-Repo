@@ -18,6 +18,25 @@
       "versions":{
         "0.1.0":"0"
       }
+    },
+    {
+      "currentVersion":"0.1.0",
+      "description":"Pulse BI mesos framework",
+      "framework":true,
+      "name":"pulse-api",
+      "selected":false,
+      "tags":[
+        "mesosphere",
+        "framework",
+        "database",
+        "bi",
+        "pulse",
+        "alerts",
+        "metrics"
+      ],
+      "versions":{
+        "0.1.0":"0"
+      }
     }
   ],
   "version":"2.0.0"
