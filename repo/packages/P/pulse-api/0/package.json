@@ -1,6 +1,6 @@
 {
   "packagingVersion": "3.0",
-  "name": "pulse",
+  "name": "pulse-api",
   "minDcosReleaseVersion": "1.9",
   "version": "0.1.0",
   "framework": true,
