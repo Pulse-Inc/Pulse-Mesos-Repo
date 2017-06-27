@@ -1,5 +1,5 @@
 {
-    "id":"pulse/{{service.name}}",
+    "id":"{{service.name}}/backend",
     "instances": 1,
     "cpus": 0.5,
     "mem": 512,
@@ -16,7 +16,7 @@
     ],
     "env": {
         "PULSE_VERSION": "0.1.0",
-        "FRAMEWORK_NAME": "{{service.name}}",
+        "FRAMEWORK_NAME": "{{service.name}}/backend",
 
         "TASK_DEF_NUM": "4",
 
@@ -86,8 +86,8 @@
     }
   ],
     "labels": {
-        "DCOS_PACKAGE_FRAMEWORK_NAME": "pulse/{{service.name}}",
-        "DCOS_SERVICE_NAME": "{{service.name}}",
+        "DCOS_PACKAGE_FRAMEWORK_NAME": "{{service.name}}/backend",
+        "DCOS_SERVICE_NAME": "{{service.name}}-backend",
         "DCOS_SERVICE_SCHEME": "http",
         "DCOS_SERVICE_PORT_INDEX": "0",
         "MARATHON_SINGLE_INSTANCE_APP":"true"
