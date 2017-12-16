@@ -45,7 +45,7 @@
         "HAPROXY_GROUP": "external",
         "HAPROXY_DEPLOYMENT_GROUP": "{{service.name}}",
         "HAPROXY_0_VHOST": "{{service.vhost}}",
-        "HAPROXY_0_BACKEND_HTTP_OPTIONS":"  option httpchk GET /health HTTP/1.1\\r\\nHost:\\ www\n"
+        "HAPROXY_0_BACKEND_HTTP_HEALTHCHECK_OPTIONS": "  option  httpchk GET {healthCheckPath} HTTP/1.1\\r\\nHost:\\ www\n  timeout check {healthCheckTimeoutSeconds}s\n"
     },
     "upgradeStrategy": {
         "minimumHealthCapacity": 0,
