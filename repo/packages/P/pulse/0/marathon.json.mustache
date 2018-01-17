@@ -70,6 +70,19 @@
         "TASK3_PORT_NUM": "1",
         "TASK3_EXPOSE_PORT": "8080",
         "TASK3_HEALTHCHECK": "/health",
+        "TASK3_HEALTHCHECK_PORT": "0",
+        
+        "TASK3_NAME": "cassandra",
+        "TASK3_LICENSE": "{{ cassandra.license }}",
+        "TASK3_CONFIG": "{{ cassandra.config }}",
+        "TASK3_IMAGE": "{{ service.docker_repo }}/pulseinc.pulse.endpoints.cassandra:{{ cassandra.version }}",
+        "TASK3_NUM_INSTANCES": "{{ cassandra.count }}",
+        "TASK3_CPUS": "{{ cassandra.cpus }}",
+        "TASK3_MEM": "{{ cassandra.mem }}",
+        "TASK3_URI": "file:///etc/docker.tar.gz",
+        "TASK3_PORT_NUM": "1",
+        "TASK3_EXPOSE_PORT": "8080",
+        "TASK3_HEALTHCHECK": "/health",
         "TASK3_HEALTHCHECK_PORT": "0"
 
     },
