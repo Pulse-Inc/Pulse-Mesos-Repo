@@ -72,18 +72,18 @@
         "TASK3_HEALTHCHECK": "/health",
         "TASK3_HEALTHCHECK_PORT": "0",
         
-        "TASK3_NAME": "cassandra",
-        "TASK3_LICENSE": "{{ cassandra.license }}",
-        "TASK3_CONFIG": "{{ cassandra.config }}",
-        "TASK3_IMAGE": "{{ service.docker_repo }}/pulseinc.pulse.endpoints.cassandra:{{ cassandra.version }}",
-        "TASK3_NUM_INSTANCES": "{{ cassandra.count }}",
-        "TASK3_CPUS": "{{ cassandra.cpus }}",
-        "TASK3_MEM": "{{ cassandra.mem }}",
-        "TASK3_URI": "file:///etc/docker.tar.gz",
-        "TASK3_PORT_NUM": "1",
-        "TASK3_EXPOSE_PORT": "8080",
-        "TASK3_HEALTHCHECK": "/health",
-        "TASK3_HEALTHCHECK_PORT": "0"
+        "TASK4_NAME": "cassandra",
+        "TASK4_LICENSE": "{{ cassandra.license }}",
+        "TASK4_CONFIG": "{{ cassandra.config }}",
+        "TASK4_IMAGE": "{{ service.docker_repo }}/pulseinc.pulse.endpoints.cassandra:{{ cassandra.version }}",
+        "TASK4_NUM_INSTANCES": "{{ cassandra.count }}",
+        "TASK4_CPUS": "{{ cassandra.cpus }}",
+        "TASK4_MEM": "{{ cassandra.mem }}",
+        "TASK4_URI": "file:///etc/docker.tar.gz",
+        "TASK4_PORT_NUM": "1",
+        "TASK4_EXPOSE_PORT": "8080",
+        "TASK4_HEALTHCHECK": "/health",
+        "TASK4_HEALTHCHECK_PORT": "0"
 
     },
   "healthChecks": [
