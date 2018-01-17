@@ -200,6 +200,51 @@
               "mem",
               "count"
             ]
+          },
+          "cassandra": {
+            "description": "cassandra configuration properties",
+            "type": "object",
+            "properties": {
+              "license": {
+                "description": "container nsb license",
+                "type": "string",
+                "default": ""
+              },
+              "config": {
+                "description": "container configuration",
+                "type": "string",
+                "default": ""
+              },
+              "version": {
+                "description": "Version of cassandra image",
+                "type": "string",
+                "default": "0.1.0"
+              },
+              "count": {
+                "description": "Number of cassandra nodes to run",
+                "type": "integer",
+                "default": 2,
+                "minimum": 1
+              },
+              "cpus": {
+                "description": "cassandra cpu requirements",
+                "type": "number",
+                "default": 1
+              },
+              "mem": {
+                "description": "cassandra mem requirements",
+                "type": "integer",
+                "default": 2048
+              }
+            },
+            "required": [
+              "license",
+              "config",
+              "version",
+              "cpus",
+              "mem",
+              "count"
+            ]
           }
         },
           "required": [
@@ -207,7 +252,8 @@
               "domain",
               "riak",
               "riakts",
-              "elastic"
+              "elastic",
+              "cassandra"
           ]
       
   }
