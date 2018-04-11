@@ -11,12 +11,13 @@
           "forcePullImage": true,
           "portMappings": [
             { 
-              "hostPort": 0, 
               "containerPort": 80, 
-              "servicePort": 80,
+              "hostPort": 0, 
+              "servicePort": 0,
               "labels": {
                 "VIP_0": "/{{service.name}-api:80"
               },
+              "protocol": "tcp",
               "name": "pulse-http"
             }
           ]
