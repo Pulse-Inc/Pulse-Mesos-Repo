@@ -7,8 +7,17 @@
         "type": "DOCKER",
         "docker": {
           "image": "{{resource.assets.container.docker.pulse}}",
-          "network": "HOST",
-          "forcePullImage": true
+          "network": "USER",
+          "forcePullImage": true,
+          "portMappings": [
+            {
+              "containerPort": 80
+              "servicePort": 0,
+              "hostPort": 0,
+              "protocol": "tcp",
+              "name": "health"
+            }
+          ]
         }
     },
     "uris": [
@@ -77,7 +86,7 @@
   "healthChecks": [
     {
       "path": "/health",
-      "protocol": "HTTP",
+      "protocol": "MESOS_HTTP",
       "gracePeriodSeconds": 60,
       "intervalSeconds": 30,
       "timeoutSeconds": 30,
@@ -91,10 +100,15 @@
         "DCOS_SERVICE_NAME": "{{service.name}}-backend",
         "DCOS_SERVICE_SCHEME": "http",
         "DCOS_SERVICE_PORT_INDEX": "0",
-        "MARATHON_SINGLE_INSTANCE_APP":"true"
+        "MARATHON_SINGLE_INSTANCE_APP":"true",
+        "HAPROXY_GROUP": "external",
+        "HAPROXY_0_VHOST": "pulse-backend.pulse-infra.com"
     },
     "upgradeStrategy": {
         "minimumHealthCapacity": 0,
         "maximumOverCapacity": 0
-    }
+    },
+  "ipAddress": {
+    "networkName": "dcos"
+  }
 }
