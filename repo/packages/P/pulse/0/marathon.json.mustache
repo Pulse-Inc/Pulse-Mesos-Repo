@@ -8,16 +8,7 @@
         "docker": {
           "image": "{{resource.assets.container.docker.pulse}}",
           "network": "USER",
-          "forcePullImage": true,
-          "portMappings": [
-            {
-              "containerPort": 80,
-              "servicePort": 0,
-              "hostPort": 0,
-              "protocol": "tcp",
-              "name": "health"
-            }
-          ]
+          "forcePullImage": true
         }
     },
     "uris": [
@@ -83,18 +74,6 @@
         
 
     },
-  "healthChecks": [
-    {
-      "path": "/health",
-      "protocol": "MESOS_HTTP",
-      "gracePeriodSeconds": 60,
-      "intervalSeconds": 30,
-      "timeoutSeconds": 30,
-      "maxConsecutiveFailures": 3,
-      "ignoreHttp1xx": false,
-      "portIndex": 0
-    }
-  ],
     "labels": {
         "DCOS_PACKAGE_FRAMEWORK_NAME": "{{service.name}}-backend",
         "DCOS_SERVICE_NAME": "{{service.name}}-backend",
